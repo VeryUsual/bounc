@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://bgmd1q8nkb2f5"]
 
+[ext_resource type="Script" uid="uid://klmrwevox5ti" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://n4ggcaldobis" path="res://assets/fonts/Kenney Future.ttf" id="1_l6cm7"]
+
 [node name="MainMenu" type="Control" unique_id=379580631]
 layout_mode = 3
 anchors_preset = 15
@@ -7,21 +10,51 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ekxnf")
 
-[node name="Label" type="Label" parent="." unique_id=1410632993]
+[node name="Control" type="Control" parent="." unique_id=1377819721]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.5
-offset_top = -11.5
-offset_right = 24.5
-offset_bottom = 11.5
+offset_left = -148.5
+offset_top = -148.5
+offset_right = 148.5
+offset_bottom = 148.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=74734506]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 47.5
+offset_right = -47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=1410632993]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 40
 text = "Bounc"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="Control/VBoxContainer" unique_id=1171467946]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="Control/VBoxContainer" unique_id=638759772]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+text = "Quit"
+
+[connection signal="pressed" from="Control/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

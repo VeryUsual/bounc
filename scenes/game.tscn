@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://2jjmwwaja0r1"]
+
+[ext_resource type="PackedScene" uid="uid://cfw8il4n1gmhw" path="res://scenes/player.tscn" id="1_uwrxv"]
+
+[sub_resource type="Environment" id="Environment_8cj0n"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_contrast = 1.1
+adjustment_saturation = 1.1
+
+[node name="Game" type="Node2D" unique_id=1655622601]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=644173687]
+environment = SubResource("Environment_8cj0n")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1109917135]
+offset_left = -896.0
+offset_top = -745.0
+offset_right = 2018.0
+offset_bottom = 1295.0
+color = Color(0.17641908, 0.17641911, 0.17641902, 1)
+
+[node name="Player" parent="." unique_id=874111973 instance=ExtResource("1_uwrxv")]
+position = Vector2(186, 191)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1712065829]
+offset = Vector2(0, -120)
+zoom = Vector2(0.7, 0.7)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
