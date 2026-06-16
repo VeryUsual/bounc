@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://ddv7e8m0450bv" path="res://scripts/player.gd" id="1_3vyb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
-size = Vector2(85.945816, 7.6365814)
+size = Vector2(91.77824, 7.6365814)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(1, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(68, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
 size = Vector2(50, 10)
@@ -16,8 +19,11 @@ script = ExtResource("1_3vyb7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=272747470]
 
+[node name="Line2D" type="Line2D" parent="StaticBody2D" unique_id=1203217405]
+points = PackedVector2Array(-103, -12, -78, 8, -56, 24, -33, 39, 0, 39, 32, 39, 55, 22, 77, 5, 101, -16)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=113550337]
-position = Vector2(67.5, 10.999998)
+position = Vector2(65.18005, 12.766951)
 rotation = -0.6509055
 shape = SubResource("RectangleShape2D_u8vuu")
 
@@ -26,9 +32,6 @@ position = Vector2(-68.896835, 13.5894985)
 rotation = 0.65100783
 shape = SubResource("RectangleShape2D_u8vuu")
 
-[node name="Line2D" type="Line2D" parent="StaticBody2D" unique_id=1203217405]
-points = PackedVector2Array(-103, -12, -78, 8, -56, 24, -33, 39, 0, 39, 32, 39, 55, 22, 77, 5, 101, -16)
-
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1347828901]
 position = Vector2(80.5, -8)
 shape = SubResource("RectangleShape2D_g2els")
@@ -36,6 +39,10 @@ shape = SubResource("RectangleShape2D_g2els")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1154365811]
 position = Vector2(-84.5, -8)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=555215846]
+position = Vector2(0, 39)
+shape = SubResource("RectangleShape2D_qhqgy")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=541730187]
 position = Vector2(0, -8)
