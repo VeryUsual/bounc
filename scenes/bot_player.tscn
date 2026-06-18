@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cx8xbmol1asjx"]
+
+[ext_resource type="Script" uid="uid://dkfhrg0a5utgf" path="res://scripts/bot_player.gd" id="1_auqej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cc8xc"]
+size = Vector2(91.77824, 7.6365814)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_auqej"]
+size = Vector2(1, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab2jp"]
+size = Vector2(68, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3ts1"]
+size = Vector2(50, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g04tk"]
+size = Vector2(100, 18)
+
+[node name="BotPlayer" type="Node2D" unique_id=480077475]
+script = ExtResource("1_auqej")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=673548624]
+
+[node name="Line2D" type="Line2D" parent="StaticBody2D" unique_id=137413959]
+points = PackedVector2Array(-103, -12, -78, 8, -56, 24, -33, 39, 0, 39, 32, 39, 55, 22, 77, 5, 101, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=700401611]
+position = Vector2(65.18005, 12.766951)
+rotation = -0.6509055
+shape = SubResource("RectangleShape2D_cc8xc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=278289809]
+position = Vector2(-68.896835, 13.5894985)
+rotation = 0.65100783
+shape = SubResource("RectangleShape2D_cc8xc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=689804050]
+position = Vector2(80.5, -8)
+shape = SubResource("RectangleShape2D_auqej")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2138550697]
+position = Vector2(-84.5, -8)
+shape = SubResource("RectangleShape2D_auqej")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=297032213]
+position = Vector2(0, 39)
+shape = SubResource("RectangleShape2D_ab2jp")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1483127015]
+position = Vector2(0, -8)
+
+[node name="Line2D2" type="Line2D" parent="CharacterBody2D" unique_id=1274163360]
+position = Vector2(9, 0)
+points = PackedVector2Array(-34, 0, 16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=950394066]
+shape = SubResource("RectangleShape2D_w3ts1")
+
+[node name="ScoreArea" type="Area2D" parent="." unique_id=1409271227]
+position = Vector2(0, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea" unique_id=1317050365]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_g04tk")
+
+[connection signal="body_entered" from="ScoreArea" to="." method="_on_score_area_body_entered"]

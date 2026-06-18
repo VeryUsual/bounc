@@ -14,6 +14,9 @@ size = Vector2(68, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
 size = Vector2(50, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(100, 18)
+
 [node name="Player" type="Node2D" unique_id=874111973]
 script = ExtResource("1_3vyb7")
 
@@ -53,3 +56,12 @@ points = PackedVector2Array(-34, 0, 16, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1109962805]
 shape = SubResource("RectangleShape2D_3vyb7")
+
+[node name="ScoreArea" type="Area2D" parent="." unique_id=495208059]
+position = Vector2(0, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea" unique_id=2066662367]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_dqkch")
+
+[connection signal="body_entered" from="ScoreArea" to="." method="_on_score_area_body_entered"]
