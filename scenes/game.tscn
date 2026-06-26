@@ -50,18 +50,16 @@ position = Vector2(183, -91)
 
 [node name="BotPlayer" parent="Bots" unique_id=480077475 instance=ExtResource("4_lbhrr")]
 position = Vector2(186, -184)
-rotation = -3.1415925
 
 [node name="BotPlayer2" parent="Bots" unique_id=1514440443 instance=ExtResource("4_lbhrr")]
 position = Vector2(74, -66)
-rotation = 1.5707964
 
 [node name="BotPlayer3" parent="Bots" unique_id=1838310021 instance=ExtResource("4_lbhrr")]
 position = Vector2(302, -73)
-rotation = -1.5707964
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1266381736]
 position = Vector2(184, -24)
+scale = Vector2(2.835, 2.835)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=21863221]
 position = Vector2(-125.19327, 62.127792)
@@ -172,3 +170,6 @@ position = Vector2(80.46838, -186.57278)
 rotation = -0.9250245
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="Centre" type="Node2D" parent="." unique_id=330502968]
+position = Vector2(190, -73)

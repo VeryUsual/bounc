@@ -25,4 +25,6 @@ func _physics_process(delta: float) -> void:
 func _on_score_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ball"):
 		await get_tree().create_timer(0.2).timeout
+		get_tree().current_scene.wait_and_remake_circle(140, 0.1)
+		get_tree().current_scene.get_node("Ball").reset()
 		queue_free()

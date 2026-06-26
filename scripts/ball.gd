@@ -5,6 +5,9 @@ const BOUNCE_FORCE = 500
 var direction = Vector2.DOWN
 
 func _physics_process(delta: float) -> void:
+	if global_position.distance_to(get_tree().current_scene.get_node("Centre").global_position) > 240:
+		direction = -direction
+	
 	velocity = direction * SPEED
 	move_and_slide()
 	
@@ -15,4 +18,10 @@ func _physics_process(delta: float) -> void:
 		velocity = direction * BOUNCE_FORCE
 
 func _ready() -> void:
+	velocity = direction * SPEED
+
+func reset():
+	velocity = Vector2.ZERO
+	global_position = get_tree().current_scene.get_node("Centre").global_position
+	await get_tree().create_timer(0.1).timeout
 	velocity = direction * SPEED
