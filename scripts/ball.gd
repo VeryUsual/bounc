@@ -6,7 +6,8 @@ var direction = Vector2.DOWN
 
 func _physics_process(delta: float) -> void:
 	if global_position.distance_to(get_tree().current_scene.get_node("Centre").global_position) > 240:
-		direction = -direction
+		direction = -direction.rotated(deg_to_rad(randf_range(-20, 20)))
+		reset()
 	
 	velocity = direction * SPEED
 	move_and_slide()
@@ -21,7 +22,15 @@ func _ready() -> void:
 	velocity = direction * SPEED
 
 func reset():
-	velocity = Vector2.ZERO
+	var old_dir = direction
+	if get_tree().current_scene.get_node("Bots").get_child_count() == 1:
+		old_dir = Vector2.DOWN
+	await get_tree().create_timer(0.2).timeout
+	direction = Vector2.ZERO
 	global_position = get_tree().current_scene.get_node("Centre").global_position
-	await get_tree().create_timer(0.1).timeout
-	velocity = direction * SPEED
+	direction = old_dir
+	await get_tree().process_frame
+	direction = Vector2.ZERO
+	await get_tree().create_timer(0.7).timeout
+	direction = old_dir
+	

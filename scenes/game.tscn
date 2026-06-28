@@ -49,13 +49,19 @@ position = Vector2(183, -91)
 [node name="Bots" type="Node" parent="." unique_id=1722652424]
 
 [node name="BotPlayer" parent="Bots" unique_id=480077475 instance=ExtResource("4_lbhrr")]
-position = Vector2(186, -184)
+position = Vector2(74, -144)
 
 [node name="BotPlayer2" parent="Bots" unique_id=1514440443 instance=ExtResource("4_lbhrr")]
-position = Vector2(74, -66)
+position = Vector2(74, -50)
 
 [node name="BotPlayer3" parent="Bots" unique_id=1838310021 instance=ExtResource("4_lbhrr")]
-position = Vector2(302, -73)
+position = Vector2(310, -57)
+
+[node name="BotPlayer4" parent="Bots" unique_id=1425462952 instance=ExtResource("4_lbhrr")]
+position = Vector2(190, -233)
+
+[node name="BotPlayer5" parent="Bots" unique_id=742851026 instance=ExtResource("4_lbhrr")]
+position = Vector2(302, -153)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1266381736]
 position = Vector2(184, -24)
